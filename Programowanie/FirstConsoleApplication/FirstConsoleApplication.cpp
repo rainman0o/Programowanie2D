@@ -34,8 +34,8 @@ void task1()
         
 }
 
-//Program obliczaj¹cy pole prostok¹ta.
 void task2()
+//Program obliczaj¹cy pole prostok¹ta.
 {
     double firstSide;
     double secoundSide;
@@ -146,7 +146,8 @@ void task8()
     cout << "podaj wysokoœæ trazpezu";
     cin >> height;
 
-    double areaOfTheTrapezoid =
+    double areaOfTheTrapezoid = 1.0 / 2 * (theBaseOfTheTrapezoid1 + theBaseOfTheTrapezoid2) * height;
+    cout << "pole trapezu wynosi: " << areaOfTheTrapezoid;
 }
 
 int main()
@@ -160,6 +161,7 @@ int main()
     //task5();
     //task6():
     //task7();
+    //task8();
 
 }
 
