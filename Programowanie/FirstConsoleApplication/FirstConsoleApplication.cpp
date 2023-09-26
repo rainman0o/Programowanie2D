@@ -22,15 +22,15 @@ void task1()
     double number1;
     double number2;
 
-    cout << "podaj pierwsza liczbe \n";
+    cout << "Podaj pierwsz¹ liczbê \n";
     cin >> number1;
 
-    cout << "podaj druga liczbe \n";
+    cout << "Podaj drug¹ liczbê \n";
     cin >> number2;
 
     double avrageOfNumbers = (number1 + number2) / 2;
     
-    cout << "wynik: " << avrageOfNumbers;
+    cout << "Wynik: " << avrageOfNumbers;
         
 }
 
@@ -40,15 +40,15 @@ void task2()
     double firstSide;
     double secoundSide;
 
-    cout << "podaj pierwszy bok prostok¹ta: \n";
+    cout << "Podaj pierwszy bok prostok¹ta: \n";
     cin >> firstSide;
 
-    cout << "podaj drugi bok prostok¹ta: \n";
+    cout << "Podaj drugi bok prostok¹ta: \n";
     cin >> secoundSide;
 
     double areaOfRectangle = firstSide * secoundSide;
 
-    cout << "pole prostok¹ta wynosi: " << areaOfRectangle;
+    cout << "Pole prostok¹ta wynosi: " << areaOfRectangle;
 }
 
 //Program obliczaj¹cy objêtoœæ sto¿ka.
@@ -57,15 +57,15 @@ void task3()
     double height;
     double radius;
      
-    cout << "podaj wysokoœæ sto¿ka: \n";
+    cout << "Podaj wysokoœæ sto¿ka: \n";
     cin >> height;
 
-    cout << "podaj promieñ sto¿ka: \n";
+    cout << "Podaj promieñ sto¿ka: \n";
     cin >> radius;
 
     double volume = (1.0 / 3) * M_PI * (radius * radius) * height;
 
-    cout << "objêtoœæ sto¿ka wynosi: " << volume;
+    cout << "Objêtoœæ sto¿ka wynosi: " << volume;
 
 }
 
@@ -75,12 +75,12 @@ void task4()
 {
     double radious;
 
-    cout << "podaj promieñ ko³a \n";
+    cout << "Podaj promieñ ko³a \n";
     cin >> radious;
 
     double areaOfCircle = M_PI * pow(radious, 2);
 
-    cout << "pole ko³a wynosi: " << areaOfCircle;
+    cout << "Pole ko³a wynosi: " << areaOfCircle;
 }
 
 //Program obliczaj¹cy wartoœæ wyra¿enia a ^ 2 + b ^ 2
@@ -89,15 +89,15 @@ void task5()
     double number1;
     double number2;
 
-    cout << "podaj pierwsz¹ liczbê: \n";
+    cout << "Podaj pierwsz¹ liczbê: \n";
     cin >> number1;
 
-    cout << "podaj drug¹ liczbê: \n";
+    cout << "Podaj drug¹ liczbê: \n";
     cin >> number2;
 
     double result = (pow(number1, 2)) + (pow(number2, 2));
 
-    cout << "wynik wynosi: " << result;
+    cout << "Wynik wynosi: " << result;
 }
 
 //Program obliczaj¹cy pole trójk¹ta o podstawie b i wysokoœci h
@@ -106,14 +106,14 @@ void task6()
     double theBaseOfTriangle;
     double height;
 
-    cout << "podaj d³ugoœæ podstawy trójk¹ta: \n";
+    cout << "Podaj d³ugoœæ podstawy trójk¹ta: \n";
     cin >> theBaseOfTriangle;
 
-    cout << "podaj wysokoœæ trójk¹ta: \n";
+    cout << "Podaj wysokoœæ trójk¹ta: \n";
     cin >> height;
 
     double areaOfTriangle = (theBaseOfTriangle * height) / 2;
-    cout << "pole trójk¹ta wynosi: " << areaOfTriangle;
+    cout << "Pole trójk¹ta wynosi: " << areaOfTriangle;
 
 }
 
@@ -122,12 +122,12 @@ void task7()
 {
     double radious;
 
-    cout << "podaj promieñ kuli: \n";
+    cout << "Podaj promieñ kuli: \n";
     cin >> radious;
 
     double volume = (4.0 / 3) * M_PI * pow(radious, 3);
 
-    cout << "pole kuli wynosi: \n" << volume;
+    cout << "Pole kuli wynosi: \n" << volume;
 }
 
 //Program obliczaj¹cy pole trapezu o podstawach a i b oraz wysokoœci h
@@ -137,17 +137,49 @@ void task8()
     double theBaseOfTheTrapezoid2;
     double height;
 
-    cout << "podaj pierwsz¹ podstawê trapezu: \n";
+    cout << "Podaj pierwsz¹ podstawê trapezu: \n";
     cin >> theBaseOfTheTrapezoid1;
 
-    cout << "podaj drug¹ podstawê trapezu: \n";
+    cout << "Podaj drug¹ podstawê trapezu: \n";
     cin >> theBaseOfTheTrapezoid2;
 
-    cout << "podaj wysokoœæ trazpezu";
+    cout << "Podaj wysokoœæ trazpezu";
     cin >> height;
 
     double areaOfTheTrapezoid = 1.0 / 2 * (theBaseOfTheTrapezoid1 + theBaseOfTheTrapezoid2) * height;
-    cout << "pole trapezu wynosi: " << areaOfTheTrapezoid;
+    cout << "Pole trapezu wynosi: " << areaOfTheTrapezoid;
+}
+
+//Program obliczaj¹cy œredni¹ wa¿on¹ trzech liczb z podanymi odpowiednimi wagami w1, w2 i w3.
+void task9()
+{
+    double number1;
+    double number2;
+    double number3;
+    double numberWeight1;
+    double numberWeight2;
+    double numberWeight3;
+
+    cout << "Podaj pierwsz¹ liczbe: \n";
+    cin >> number1;
+    cout << "Podaj wagê pierwszej liczby: \n";
+    cin >> numberWeight1;
+
+    cout << "Podaj drug¹ liczbe: \n";
+    cin >> number2;
+    cout << "Podaj wagê drugiej liczby: \n";
+    cin >> numberWeight2;
+
+    cout << "Podaj trzeci¹ liczbe: \n";
+    cin >> number3;
+    cout << "Podaj wagê trzeciej liczby: \n";
+    cin >> numberWeight3;
+
+    double averageGrade = ((number1 * numberWeight1) +
+        (number2 * numberWeight2) + (number3 * numberWeight3)) /
+        (numberWeight1 + numberWeight2 + numberWeight3);
+
+    cout << "Œrednia wa¿ona z podanych liczb wynosi:  " << averageGrade;
 }
 
 int main()
@@ -162,6 +194,7 @@ int main()
     //task6():
     //task7();
     //task8();
+    //task9();
 
 }
 
