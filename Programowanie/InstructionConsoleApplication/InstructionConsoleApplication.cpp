@@ -145,7 +145,7 @@ void task5()
 
 //Program sprawdzaj¹cy czy podana data jest poprawna
 //(np.sprawdzaj¹c, czy dzieñ jest z zakresu od 1 do 31, miesi¹c od 1 do 12 itd.)
-bool task6_1(int day, int month, int year)
+bool task6_check(int day, int month, int year)
 {
 	if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12 && day <= 31 && day > 0)
 		return true;
@@ -163,6 +163,8 @@ bool task6_1(int day, int month, int year)
 		else
 			if (day > 0 && day <= 29)
 				return true;
+
+		else return false;
 	}
 	else
 		return false;
@@ -177,7 +179,7 @@ void task6()
 	std::cout << "podaj rok ";
 	std::cin >> yearFromUser;
 
-	if (task6_1(dayFromUser, monthFromUser, yearFromUser))
+	if (task6_check (dayFromUser, monthFromUser, yearFromUser))
 		std::cout << "poprawna data";
 	else
 		std::cout << "data niepoprawna";
