@@ -154,7 +154,8 @@ bool task6_1(int day, int month, int year)
 	else if (month == 2)
 	{
 
-		if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)
+		if (year % 4 == 0 && year % 100 > 0 || year % 400 == 0
+			)
 		{
 			if (day > 0 && day <= 28)
 				return true;
@@ -212,7 +213,7 @@ int main()
 	//task3();
 	//task4();
 	//task5();
-	//task6();
+	task6();
 	//task7();
 }
 
