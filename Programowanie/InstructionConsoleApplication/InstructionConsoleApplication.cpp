@@ -154,7 +154,7 @@ void task6()
 	cout << "Podaj miesi¹c: \n";
 	cin >> month;
 
-	if (day > 0 && day < 32  && month > 0 && month < 32)
+	if (day > 0 && day < 32  && month > 0 && month < 13)
 	{
 		cout << "poprawna data\n";
 	}
