@@ -145,24 +145,41 @@ void task5()
 
 //Program sprawdzaj¹cy czy podana data jest poprawna
 //(np.sprawdzaj¹c, czy dzieñ jest z zakresu od 1 do 31, miesi¹c od 1 do 12 itd.)
-void task6()
+bool task6_1(int day, int month, int year)
 {
-	int day, month;
-
-	cout << "Podaj dzieñ: \n";
-	cin >> day;
-	cout << "Podaj miesi¹c: \n";
-	cin >> month;
-
-	if (day > 0 && day < 32  && month > 0 && month < 13)
+	if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12 && day <= 31 && day > 0)
+		return true;
+	else if (month == 4 || month == 6 || month == 9 || month == 11 && day <= 30 && day > 0)
+		return true;
+	else if (month == 2)
 	{
-		cout << "poprawna data\n";
+
+		if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)
+		{
+			if (day > 0 && day <= 28)
+				return true;
+		}
+		else
+			if (day > 0 && day <= 29)
+				return true;
 	}
 	else
-	{
-		cout << "niepoprawna data \n";
-	}
+		return false;
+}
+void task6()
+{
+	int dayFromUser, monthFromUser, yearFromUser;
+	std::cout << "podaj dzieñ ";
+	std::cin >> dayFromUser;
+	std::cout << "podaj miesi¹c ";
+	std::cin >> monthFromUser;
+	std::cout << "podaj rok ";
+	std::cin >> yearFromUser;
 
+	if (task6_1(dayFromUser, monthFromUser, yearFromUser))
+		std::cout << "poprawna data";
+	else
+		std::cout << "data niepoprawna";
 }
 
 //Program wyœwietlaj¹cy odpowiedni komunikat w zale¿noœci od podanej temperatury
