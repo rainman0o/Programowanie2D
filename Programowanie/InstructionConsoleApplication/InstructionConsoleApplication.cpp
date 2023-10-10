@@ -150,11 +150,11 @@ void task6()
 	int day;
 	int month;
 	int year;
-	cout << "Enter the day: " << endl;
+	cout << "Podaj dzieñ:\n " << endl;
 	cin >> day;
-	cout << "Enter the month: " << endl;
+	cout << "Podaj miesi¹æ:\n " << endl;
 	cin >> month;
-	cout << "Enter the year: " << endl;
+	cout << "Podaj rok:\n " << endl;
 	cin >> year;
 	if (month >= 1 && month <= 12)
 	{
@@ -164,37 +164,37 @@ void task6()
 			{
 				if (day < 30)
 				{
-					cout << "date is correct";
+					cout << "data jest poprawna";
 				}
 				else
 				{
-					cout << "date is incorrect";
+					cout << "data jest nie poprawna";
 				}
 
 			}
 			else if (year % 4 != 0 && year % 100 > 1 || year % 400 != 0)
 			{
 				if (day < 29) {
-					cout << "date is correct";
+					cout << "data jest poprawna";
 				}
 				else
 				{
-					cout << "date is incorrect";
+					cout << "data jest nie poprwana";
 				}
 			}
 			
 		}
 		else if ((month == 4 || month == 6 || month == 9 || month == 11) && day >= 1 && day <= 30)
 		{
-			cout << "Date is correct." << endl;
+			cout << "data jest poprawna" << endl;
 		}
 		else if (day >= 1 && day <= 31)
 		{
-			cout << "Date is correct." << endl;
+			cout << "data jest nie poprawna" << endl;
 		}
 		else
 		{
-			cout << "Date isn't correct." << endl;
+			cout << "data jest nie poprawna" << endl;
 		}
 	}
 }
@@ -217,8 +217,71 @@ void task7()
 		cout << "jest ch³odno\n";
 	}
 }
+	
+//8. Program sprawdzj¹cy czy podana liczba jest z przedia³u < 1; 15)
+void task8()
+{
+	double numberFromUser;
 
+	cout << "Podaj liczbê do sprawdzenia: \n";
+	cin >> numberFromUser;
 
+	if (numberFromUser >= 1 && numberFromUser < 15)
+	{
+		cout << "Liczba jest w przedziale \n";
+	}
+	else
+	{
+		cout << "liczba nie nale¿y do przedzia³u";
+	}
+
+}
+
+//9. Program sprawdzaj¹cy czy osoba jest pe³noletnia.
+void task9()
+{
+	int age;
+
+	cout << "podaj wiek do sprawdzenia\n ";
+	cin >> age;
+
+	if (age >= 18)
+	{
+		cout << "osoba jest pe³noletnia";
+	}
+	else
+	{
+		cout << "osoba jest niepe³noletnia";
+	}
+
+}	
+
+//10. Program, który sprawdzi czy z podanych d³ugoœci boków mo¿na zrobiæ trójk¹t.
+void task10()
+{
+	double firstSideOfTriangle, secondSideOfTriangle, thirdSideOfTriangle;
+
+	cout << "podaj pierwszy bok trójk¹ta: \n";
+	cin >> firstSideOfTriangle;
+
+	cout << "podaj drugi bok trójk¹ta: \n";
+	cin >> secondSideOfTriangle;
+
+	cout << "podaj trzeci bok trójk¹ta: \n";
+	cin >> thirdSideOfTriangle;
+
+	if (firstSideOfTriangle + secondSideOfTriangle > thirdSideOfTriangle && secondSideOfTriangle + thirdSideOfTriangle > firstSideOfTriangle
+		&& firstSideOfTriangle + thirdSideOfTriangle > secondSideOfTriangle)
+	{
+		cout << "taki trójk¹t istnieje \n";
+	}
+	else
+	{
+		cout << "taki trój¹t nie istnieje";
+	}
+
+}
+	
 int main()
 {
 	setlocale(LC_CTYPE, "polish");
@@ -231,5 +294,8 @@ int main()
 	//task5();
 	task6();
 	//task7();
+	//task8();
+	//task9();
+	//task10();
 }
 
