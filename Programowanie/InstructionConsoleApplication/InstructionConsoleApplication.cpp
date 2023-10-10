@@ -145,44 +145,58 @@ void task5()
 
 //Program sprawdzaj¹cy czy podana data jest poprawna
 //(np.sprawdzaj¹c, czy dzieñ jest z zakresu od 1 do 31, miesi¹c od 1 do 12 itd.)
-bool task6_check(int day, int month, int year)
-{
-	if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12 && day <= 31 && day > 0)
-		return true;
-	else if (month == 4 || month == 6 || month == 9 || month == 11 && day <= 30 && day > 0)
-		return true;
-	else if (month == 2)
-	{
-
-		if (year % 4 == 0 && year % 100 > 0 || year % 400 == 0
-			)
-		{
-			if (day > 0 && day <= 28)
-				return true;
-		}
-		else
-			if (day > 0 && day <= 29)
-				return true;
-
-		else return false;
-	}
-	else
-		return false;
-}
 void task6()
 {
-	int dayFromUser, monthFromUser, yearFromUser;
-	std::cout << "podaj dzieñ ";
-	std::cin >> dayFromUser;
-	std::cout << "podaj miesi¹c ";
-	std::cin >> monthFromUser;
-	std::cout << "podaj rok ";
-	std::cin >> yearFromUser;
+	int day;
+	int month;
+	int year;
+	cout << "Enter the day: " << endl;
+	cin >> day;
+	cout << "Enter the month: " << endl;
+	cin >> month;
+	cout << "Enter the year: " << endl;
+	cin >> year;
+	if (month >= 1 && month <= 12)
+	{
+		if (month == 2)
+		{
+			if (year % 4 == 0 && year % 100 > 0 || year % 400 == 0)
+			{
+				if (day < 30)
+				{
+					cout << "date is correct";
+				}
+				else
+				{
+					cout << "date is incorrect";
+				}
 
-	if (task6_check (dayFromUser, monthFromUser, yearFromUser))
-		std::cout << "poprawna data";
-	else
-		std::cout << "data niepoprawna";
+			}
+			else if (year % 4 != 0 && year % 100 > 1 || year % 400 != 0)
+			{
+				if (day < 29) {
+					cout << "date is correct";
+				}
+				else
+				{
+					cout << "date is incorrect";
+				}
+			}
+			
+		}
+		else if ((month == 4 || month == 6 || month == 9 || month == 11) && day >= 1 && day <= 30)
+		{
+			cout << "Date is correct." << endl;
+		}
+		else if (day >= 1 && day <= 31)
+		{
+			cout << "Date is correct." << endl;
+		}
+		else
+		{
+			cout << "Date isn't correct." << endl;
+		}
+	}
 }
 
 //Program wyœwietlaj¹cy odpowiedni komunikat w zale¿noœci od podanej temperatury
