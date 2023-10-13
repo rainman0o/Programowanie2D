@@ -1,3 +1,4 @@
+#define _USE_MATH_DEFINES
 #include <iostream>
 
 using namespace std;
@@ -150,12 +151,16 @@ void task6()
 	int day;
 	int month;
 	int year;
+
 	cout << "Podaj dzieñ:\n " << endl;
 	cin >> day;
+
 	cout << "Podaj miesi¹æ:\n " << endl;
 	cin >> month;
+
 	cout << "Podaj rok:\n " << endl;
 	cin >> year;
+
 	if (month >= 1 && month <= 12)
 	{
 		if (month == 2)
@@ -281,7 +286,150 @@ void task10()
 	}
 
 }
+
+//11. Napisz program, który bêdzie dzia³aæ jako prosty kalkulator matematyczny, umo¿liwiaj¹c u¿ytkownikowi wybór operacji(dodawanie, odejmowanie, mno¿enie, dzielenie) i wprowadzanie liczb do obliczeñ.
+void task11()
+{
+	int operation;
+	double firstNumberFromUser, SecondNumberFromUser;
+
+	cout << "Podaj operacje do wykonania \n 1. Dodawanie\n 2. Odejmowanie\n 3. Mno¿enie\n 4.Dzielenie \n";
+	cin >> operation;
+
+	cout << "Podaj pierwsza liczbê: ";
+	cin >> firstNumberFromUser;
+
+	cout << "Podaj drug¹ liczbê: ";
+	cin >> SecondNumberFromUser;
 	
+	if (operation == 1)
+	{
+		cout << "wynik dzia³ania: " << firstNumberFromUser + SecondNumberFromUser;
+	}
+	else if (operation == 2)
+	{
+		cout << "wynik dzia³ania: " << firstNumberFromUser - SecondNumberFromUser;
+	}
+	else if (operation == 3)
+	{
+		cout << "wynik dzia³ania: " << firstNumberFromUser * SecondNumberFromUser;
+	}
+	else if (operation == 4)
+	{
+		cout << "wynik dzia³ania: " << firstNumberFromUser / SecondNumberFromUser;
+	}
+
+}
+
+//12. Napisz program, który wczyta numer miesi¹ca i wyœwietli jego s³owny odpowiednik.
+void task12()
+{
+	int month;
+
+	cout << "podaj numer miesi¹ca:" ;
+	cin >> month;
+
+	switch (month)
+	{
+	case 1:
+		cout << "Styczeñ";
+		break;
+
+	case 2:
+		cout << "Luty";
+		break;
+
+	case 3:
+		cout << "Marzec";
+		break;
+
+	case 4:
+		cout << "Kwiecieñ";
+		break;
+
+	case 5:
+		cout << "Maj";
+		break;
+
+	case 6:
+		cout << "Czerwiec";
+		break;
+
+	case 7:
+		cout << "Lipiec";
+		break;
+
+	case 8:
+		cout << "Sierpieñ";
+		break;
+
+	case 9:
+		cout << "Wrzesieñ";
+		break;
+
+	case 10:
+		cout << "PaŸdziernik";
+		break;
+
+	case 11:
+		cout << "Listopad";
+		break;
+
+	case 12:
+		cout << "Grudzieñ";
+		break;
+	
+	default: 
+		cout << "nie ma takiego miesi¹ca";
+	}
+	
+}
+
+//13. Napisz program, który na podstawie wspó³czynników równania kwadratowego(a, b, c)
+//  sprawdzi, czy to równanie ma rozwi¹zania rzeczywiste, i jeœli tak, to je obliczy.
+void task13()
+{
+	double a, b, c;
+
+	cout << "Podaj a: ";
+	cin >> a;
+
+	cout << "Podaj b: ";
+	cin >> b;
+
+	cout << "Podaj c: ";
+	cin >> c;
+
+	if (a != 0) {
+
+		double delta = pow(b, 2) - 4 * (a * c);
+
+		if (delta > 0)
+		{
+			double x1 = (-b - sqrt(delta)) / 2 * a;
+			double x2 = (-b + sqrt(delta)) / 2 * a;
+
+			cout << "s¹ 2 miejsca zerowe: " << x1 << "i: " << x2;
+
+		}
+		else if (delta == 0)
+		{
+			double x = -b / 2 * a;;
+			cout << "miejsce zerowe wynosi: " << x;
+		}
+
+		else if (delta < 0)
+		{
+			cout << "równanie kwadratowe nie posiada rozwi¹zañ w zbiorze rzeczywistym";
+		}
+
+	}
+	else
+	{
+		cout << "To nie jest równanie kwadratowe";
+	}
+}
+
 int main()
 {
 	setlocale(LC_CTYPE, "polish");
@@ -292,10 +440,13 @@ int main()
 	//task3();
 	//task4();
 	//task5();
-	task6();
+	//task6();
 	//task7();
 	//task8();
 	//task9();
 	//task10();
+	//task11();
+	//task12();
+	//task13();
 }
 
