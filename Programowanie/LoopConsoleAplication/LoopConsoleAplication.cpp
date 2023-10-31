@@ -18,7 +18,6 @@ void task1()
 
 void task2()
 {
-
 	int sum = 0;
 
 	for (int i = 1; i <= 100; i++)
@@ -33,15 +32,12 @@ void task2()
 
 void task3() 
 {
-	
-
 	for (int i = 0; i <= 10; i++)
 	{
-		cout << pow(i, 2) << ", ";
+		cout << pow(i, 2) << ", ";	
 	}
-
-
 }
+
 
 int main()
 {
