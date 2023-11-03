@@ -38,11 +38,127 @@ void task3()
 	}
 }
 
+//Program obliczaj¹cy n!.
+
+void task4()
+{
+	int numberFromUser;
+	double strong = 1;
+
+	cout << "podaj liczbe do obliczenia silni: ";
+	cin >> numberFromUser;
+
+	for (int i = 1; i <= numberFromUser; i++)
+	{
+		 strong *= i;
+	}
+
+	cout << "silnia wynosi: " << strong;
+}
+
+//*Program wyœwietlaj¹cy na ekranie silnie z liczb od 1 do 10 (np. 1!, 2!, 3!, 4!itd.)
+
+void task5()
+{
+	double strong = 1;
+
+	for (int i = 1; i <=10; i++)
+	{
+		strong *= i;
+		cout <<"silnia z "<< i << ": " << strong << ", ";
+	}
+}
+
+//Program wyœwietlaj¹cy na ekranie tabliczkê mno¿enia od 1 do 9 (np. 1x1 = 1, 1x2 = 2, 1x3 = 3 itd.).
+
+void task6()
+{
+	for (int i = 1; i <= 9; i++)
+	{
+		for (int j = 1; j <= 9; j++)
+		{
+			cout << i << "x" << j << " = " << i * j << "\n";
+		}
+	}
+
+}
+
+//Program wyœwietlaj¹cy na ekranie wszystkie liczby podzielne przez 3 z zakresu od 1 do 100
+
+void task7()
+{
+	for (int i = 0; i <= 100; i++)
+	{
+		if (i % 3 == 0) {
+			cout << i << ", ";
+		}
+	}
+}
+
+//Program obliczaj¹cy sumê kwadratów liczb od 1 do 10
+
+void task8()
+{
+	int sum = 0;
+
+	for (int i = 0; i <= 10; i++)
+	{
+		sum += i * i;
+	}
+	
+	cout << "suma kwadratów od 1 - 10 wynosi : " << sum;
+}
+
+//Program wyœwietlaj¹cy na ekranie ci¹g Fibonacciego do 20 elementu(ci¹g Fibonacciego to ci¹g gdzie ka¿dy element jest sum¹ dwóch poprzednich, np. 0, 1, 1, 2, 3, 5, 8, 13 itd.)
+
+void task9()
+{
+	cout << "0 ,1, ";
+
+	int fib2 = 0;
+	int fib1 = 1;
+
+	for (int i = 0; i < 18; i++)
+	{
+		int fib = fib2 + fib1;
+		cout << fib << ", ";
+		fib2 = fib1;
+		fib1 = fib;
+	}
+}
+
+//rogram, kóry wyœwietli poni¿sze cztery zwory :
+//****54321        121212        122333
+//***65432        212121        223334444
+//**76543        121212        333444455555
+//* 87654        212121        444455555666666
+
+void task10()
+{
+	cout << "wzrór 1: "; 
+
+	for (int i = 4; i >= 1; i--)
+	{
+		for (int j = i; j < i; j++)
+		{
+			cout << "*";
+		}
+	}
+
+
+
+}
 
 int main()
 {
 	//task1();
 	//task2();
 	//task3();
+	//task4();
+	//task5();
+	//task6();
+	//task7();
+	//task8();
+	//task9();
 }
 
