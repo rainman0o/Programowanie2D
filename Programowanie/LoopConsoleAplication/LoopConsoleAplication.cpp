@@ -128,29 +128,52 @@ void task9()
 }
 
 //rogram, kóry wyœwietli poni¿sze cztery zwory :
-//****54321        121212        122333
-//***65432        212121        223334444
-//**76543        121212        333444455555
-//* 87654        212121        444455555666666
+//**** 54321        121212        122333
+//***  65432        212121        223334444
+//**   76543        121212        333444455555
+//*    87654        212121        444455555666666
 
 void task10()
 {
-	cout << "wzrór 1: "; 
+	cout << "wzrór 1: \n"; 
 
-	for (int i = 4; i >= 1; i--)
+	for (int i = 4; i > 0; i--)
 	{
-		for (int j = i; j < i; j++)
+		for (int j = 0; j < i  ; j++)
 		{
 			cout << "*";
 		}
+		cout << "\n";
 	}
 
+	cout << "wzór 2:\n";
 
+	for (int i = 0; i < 4; i++)
+	{
+		for (int j = 5 ; j >= 1; j--)
+		{
+			cout << j + i ;
+		}
+		cout << endl;
+	}
+
+	cout << "\n" << "wzór 3: \n";
+
+	for (int i = 0; i < 4; i++)
+	{
+		for (int j = 0; j < 5; j++)
+		{
+			cout << "x";
+		}
+		cout << "\n";
+	}
 
 }
 
 int main()
 {
+	setlocale(LC_CTYPE, "polish");
+
 	//task1();
 	//task2();
 	//task3();
@@ -160,5 +183,6 @@ int main()
 	//task7();
 	//task8();
 	//task9();
+	task10();
 }
 
