@@ -1,9 +1,9 @@
-#define _USE_MATH_DEFINES
+﻿#define _USE_MATH_DEFINES
 #include <iostream>
 
 using namespace std;
 
-//Program wy�wietlaj�cy na ekranie kolejne liczby naturalne od 1 do 10
+//Program wyświetlający na ekranie kolejne liczby naturalne od 1 do 10
 
 void task1()
 {
@@ -14,7 +14,7 @@ void task1()
 
 }
 
-//Program obliczaj�cy sum� liczb od 1 do 100
+//Program obliczający sumę liczb od 1 do 100
 
 void task2()
 {
@@ -28,7 +28,7 @@ void task2()
 	cout << "suma liczb o 1 do 100 wynosi: " << sum;
 }
 
-//Program wy�wietlaj�cy na ekranie kwadraty liczb od 1 do 10 (np. 1, 4, 9, 16 itd.)
+//Program wyświetlający na ekranie kwadraty liczb od 1 do 10 (np. 1, 4, 9, 16 itd.)
 
 void task3() 
 {
@@ -38,7 +38,7 @@ void task3()
 	}
 }
 
-//Program obliczaj�cy n!.
+//Program obliczający n!.
 
 void task4()
 {
@@ -56,7 +56,7 @@ void task4()
 	cout << "silnia wynosi: " << strong;
 }
 
-//*Program wy�wietlaj�cy na ekranie silnie z liczb od 1 do 10 (np. 1!, 2!, 3!, 4!itd.)
+//*Program wyświetlający na ekranie silnie z liczb od 1 do 10 (np. 1!, 2!, 3!, 4!itd.)
 
 void task5()
 {
@@ -69,7 +69,7 @@ void task5()
 	}
 }
 
-//Program wy�wietlaj�cy na ekranie tabliczk� mno�enia od 1 do 9 (np. 1x1 = 1, 1x2 = 2, 1x3 = 3 itd.).
+//Program wyświetlający na ekranie tabliczkę mnożenia od 1 do 9 (np. 1x1 = 1, 1x2 = 2, 1x3 = 3 itd.).
 
 void task6()
 {
@@ -83,7 +83,7 @@ void task6()
 
 }
 
-//Program wy�wietlaj�cy na ekranie wszystkie liczby podzielne przez 3 z zakresu od 1 do 100
+//Program wyświetlający na ekranie wszystkie liczby podzielne przez 3 z zakresu od 1 do 100
 
 void task7()
 {
@@ -95,7 +95,7 @@ void task7()
 	}
 }
 
-//Program obliczaj�cy sum� kwadrat�w liczb od 1 do 10
+//Program obliczający sumę kwadratów liczb od 1 do 10
 
 void task8()
 {
@@ -106,10 +106,10 @@ void task8()
 		sum += i * i;
 	}
 	
-	cout << "suma kwadrat�w od 1 - 10 wynosi : " << sum;
+	cout << "suma kwadratów od 1 - 10 wynosi : " << sum;
 }
 
-//Program wy�wietlaj�cy na ekranie ci�g Fibonacciego do 20 elementu(ci�g Fibonacciego to ci�g gdzie ka�dy element jest sum� dw�ch poprzednich, np. 0, 1, 1, 2, 3, 5, 8, 13 itd.)
+//Program wyświetlający na ekranie ciąg Fibonacciego do 20 elementu(ciąg Fibonacciego to ciąg gdzie każdy element jest sumą dwóch poprzednich, np. 0, 1, 1, 2, 3, 5, 8, 13 itd.)
 
 void task9()
 {
@@ -127,7 +127,7 @@ void task9()
 	}
 }
 
-//rogram, k�ry wy�wietli poni�sze cztery zwory :
+//rogram, kóry wyświetli poniższe cztery zwory :
 //**** 54321        121212        122333
 //***  65432        212121        223334444
 //**   76543        121212        333444455555
@@ -135,7 +135,7 @@ void task9()
 
 void task10()
 {
-	cout << "wzr�r 1: \n"; 
+	cout << "wzrór 1: \n"; 
 
 	for (int i = 4; i > 0; i--)
 	{
@@ -146,7 +146,7 @@ void task10()
 		cout << "\n";
 	}
 
-	cout << "wz�r 2:\n";
+	cout << "wzór 2:\n";
 
 	for (int i = 0; i < 4; i++)
 	{
@@ -157,16 +157,85 @@ void task10()
 		cout << endl;
 	}
 
-	cout << "\n" << "wz�r 3: \n";
+	cout << "\n" << "wzór 3: \n";
 
 	for (int i = 0; i < 4; i++)
 	{
-		for (int j = 0; j < 5; j++)
+		for (int j = 0; j < 6; j++)
 		{
-			cout << "x";
+			cout << (j + i) % 2 + 1;
 		}
 		cout << "\n";
 	}
+
+	cout << "\n" << "wzór 4: \n";
+
+	for (int i = 0; i < 4; i++)
+	{
+		for (int j = i + 1; j <= i + 3; j++)
+		{
+			for (int k = 0; k < j; k++)
+			{
+				cout << j;
+			}
+		}
+		cout << "\n";
+	}
+
+}
+
+
+//*Oblicz sumę szeregu 1 / 1 ^ 2 + 1 / 2 ^ 2 + 1 / 3 ^ 2 + ... + 1 / n ^ 2. Jeżeli się nie pomylisz, 
+// to dla odpowiednio dużej wartości n po przemnożeniu jej przez 6 i spierwiastkowaniu powinieneś otrzymać wartość liczby π(suma szeregu jest równa π2 / 6).Zwróć uwagę, 
+// że pierwsza wartość indeksu to 1, a nie 0. Dokładność obliczeń można sprawdzić porównując z wartością odczytaną z własności Math.PI.
+void task11()
+{
+
+
+
+}
+
+//WHILE
+//* Miasto T.ma obecnie 100 tys.mieszkańców, 
+// ale jego populacja rośnie co roku o 3 % rocznie.Miasto B.ma 300 tys.mieszkańców i ta liczba rośnie w tempie 2 % na rok
+// .Wykonaj symulację prezentującą liczbę mieszkańców w obu miastach i zatrzymującą się, gdy liczba mieszkańców miasta T.
+// przekroczy liczbę z miasta B.
+
+void task12()
+{
+
+	int CityT = 100000;
+	int CityB = 300000;
+	int year = 0;
+
+	while (CityT < CityB)
+	{
+		CityT *= 1.03;
+		CityB *= 1.02;
+		year = year + 1;
+
+	}
+
+	cout << "Populacje Miasta T przsekroczy populacje miasta B po: " << year << "latach";
+}
+
+//Napisz program,
+//  który poprosi użytkownika o wprowadzenie dowolnej liczby całkowitej.Następnie program powinien obliczyć i wyświetlić liczbę cyfr.
+void task13()
+{
+	int numberFromUser;
+	int howManyDigits = 1;
+
+	cout << "Podaj liczbę do sprawdzenia";
+	cin >> numberFromUser;
+
+	while (numberFromUser < 10)
+	{
+		numberFromUser = numberFromUser / 10;
+		howManyDigits = howManyDigits + 1;
+	}
+
+	cout << "cyfr w tej liczbe znajduje sie: " << howManyDigits;
 
 }
 
@@ -183,6 +252,10 @@ int main()
 	//task7();
 	//task8();
 	//task9();
-	task10();
+	//task10();
+	//task11();
+	//task12();
+	task13();
+	//task14();
 }
 
