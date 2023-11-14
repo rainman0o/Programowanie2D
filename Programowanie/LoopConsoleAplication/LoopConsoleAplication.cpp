@@ -293,23 +293,21 @@ void task14()
 void task15()
 {
 	int numberFromUser;
+	int sumOfDigits = 0;
 
 	cout << "podaj liczbe do sprawdzenia: ";
 	cin >> numberFromUser;
 
-	int upperRange = 10;
-
-	while (numberFromUser > 10)
+	do
 	{
-		
+		int digitFromNumber = numberFromUser % 10;
 		numberFromUser /= 10;
-	
-	}
+		
+		sumOfDigits = sumOfDigits + digitFromNumber;
 
-	
+	} while (numberFromUser > 0);
 
-	
-
+	cout << "suma cyfr podanej przez użytkownika liczby wynosi: " <<  sumOfDigits;
 }
 
 //Program wyświetlający na ekranie kwadraty liczb od 1 do 10 (np. 1, 4, 9, 16 itd.) dopóki suma tych kwadratów nie przekroczy 1000.
@@ -351,7 +349,7 @@ int main()
 	//task12();
 	//task13();
 	//task14();
-	task15();
+	//task15();
 	//task16();
 }
 
