@@ -190,8 +190,20 @@ void task10()
 // że pierwsza wartość indeksu to 1, a nie 0. Dokładność obliczeń można sprawdzić porównując z wartością odczytaną z własności Math.PI.
 void task11()
 {
+	double sum = 0;
+	double i = 1;
+	int numberFromUser;
 
+	cout << "Podaj liczbe do szeregu";
+	cin >> numberFromUser;
 
+	while (numberFromUser > i)
+	{
+		sum = sum + 1 / (i * i);
+		i++;
+	}
+
+	std::cout << "Suma " << sum << "\n";
 
 }
 
@@ -223,19 +235,101 @@ void task12()
 //  który poprosi użytkownika o wprowadzenie dowolnej liczby całkowitej.Następnie program powinien obliczyć i wyświetlić liczbę cyfr.
 void task13()
 {
-	int numberFromUser;
+	int number;
+
+	cout << "Podaj liczbe do sprawdzenia: ";
+	cin >> number;
+	
 	int howManyDigits = 1;
+	int upperRange = 10;
 
-	cout << "Podaj liczbę do sprawdzenia";
-	cin >> numberFromUser;
+	number = abs(number);
 
-	while (numberFromUser < 10)
+	while (number > upperRange)
 	{
-		numberFromUser = numberFromUser / 10;
-		howManyDigits = howManyDigits + 1;
+		howManyDigits++;
+		upperRange *= 10;
 	}
 
-	cout << "cyfr w tej liczbe znajduje sie: " << howManyDigits;
+	cout<< "Podana liczba zawiera: " << howManyDigits <<"cyfr" << "\n";
+
+}
+
+//*Program sprawdzający czy podana liczba jest liczbą doskonałą(czyli taką,
+//której suma dzielników(z wyłączeniem samej siebie) jest równa danej liczbie,
+//np. 6 jest liczbą doskonałą, ponieważ 1 + 2 + 3 = 6).
+void task14()
+{
+	int numberFromUser;
+	int sum = 0;
+
+	cout << "Podaj liczbe do sprawdzenia: ";
+	cin >> numberFromUser;
+
+	int i = 1;
+	while ( i < numberFromUser)
+	{
+		if (numberFromUser % i == 0)
+		{
+			cout << i << ", " ;
+			sum = sum + i;
+		}
+		i++;
+	}
+
+	cout << "\n" << "suma dzielników podanej liczby wynosi:" << sum << "\n";
+
+	if (sum == numberFromUser)
+	{
+		cout << "liczba jest doskonała";
+	}
+	else
+	{
+		cout << "liczba jest niedoskonała";
+	}
+}
+
+//*Napisz program, który policzy sumę cyfr podanej przez użytkownika liczby.
+void task15()
+{
+	int numberFromUser;
+
+	cout << "podaj liczbe do sprawdzenia: ";
+	cin >> numberFromUser;
+
+	int upperRange = 10;
+
+	while (numberFromUser > 10)
+	{
+		
+		numberFromUser /= 10;
+	
+	}
+
+	
+
+	
+
+}
+
+//Program wyświetlający na ekranie kwadraty liczb od 1 do 10 (np. 1, 4, 9, 16 itd.) dopóki suma tych kwadratów nie przekroczy 1000.
+void task16()
+{
+	int number = 1;
+	int sum = 0;
+
+	do
+	{
+		if (number > 10)
+		{
+			number = 1;
+		}
+
+		sum = sum + pow(number, 2);
+		cout << pow(number, 2) << ", ";
+		number++;
+
+	} while (sum  < 1000);
 
 }
 
@@ -255,7 +349,9 @@ int main()
 	//task10();
 	//task11();
 	//task12();
-	task13();
+	//task13();
 	//task14();
+	task15();
+	//task16();
 }
 
