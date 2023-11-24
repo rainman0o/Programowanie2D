@@ -79,16 +79,45 @@ void task2()
 void task3()
 {
 	string textFromUser;
+	int vovel = 0;
+	int consonant = 0;
+	int nummbers = 0;
+	int marks = 0;
+		
 
 	cout << "Podaj tekst do sprawdznia";
 	cin >> textFromUser;
 
 	for (int i = 0; i < textFromUser.length() ; i++)
 	{
+		if (textFromUser[i] == 'a' || 'A' || 'e' || 'E' || 'i' || 'I' || 'o' || 'O' || 'u' || 'U' || 'y' || 'Y' || 'ó' || 'Ó' || '¹' || '¥' || 'ê' || 'Ê')
+		{
+			vovel++;
+		}
 
+		else if (textFromUser[i] == 'b' || 'B' || 'c' || 'C' || 'æ' || 'Æ' || 'd' || 'D' || 'f' || 'F' || 'g' || 'G' || 'h' || 'H' || 'j' || 'J' || 'k' || 'K'||
+									'l' || 'L' || '³' || '£' || 'm' || 'M' || 'n' || 'N' || 'ñ' || 'Ñ' || 'p' || 'P' || 'r' || 'R' || 's' || 'S' ||'œ' || 'Œ' || 
+									't' || 'T' || 'w' || 'W' || 'z' || 'Z' || 'Ÿ' || '' || '¿' || '¯')
+		{
+			consonant++;
+		}
+
+		else if (textFromUser[i] == '0' || '1' || '2' || '3' || '4' || '5' || '6' || '7' || '8' || '9')
+		{
+			nummbers++;
+		}
+
+		else
+		{
+			marks++;
+		}
+	
 	}
 
+	cout << "w tym tekscie jest: \n" << vovel << ": samog³osek\n" << consonant << ": spó³g³osek\n" << nummbers << ": liczb\n" << marks << ": znaków specjanych\n";
 }
+
+
 
 int main()
 {
