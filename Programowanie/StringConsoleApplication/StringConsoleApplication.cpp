@@ -266,13 +266,47 @@ void task5()
 //*Program sprawdzaj¹cy czy podany ci¹g znaków jest palindromem(czyli takim, który czytany od ty³u jest taki sam, jak czytany od przodu, np. "kajak")
 void task6()
 {
+	/*string textFromUser;
+	int number = 1;
+
+	cout << "Podaj s³owo do sprawdzenia: \n";
+	cin >> textFromUser;
+
+	for (int i = 0; i < textFromUser.length(); i++)
+	{
+		if (textFromUser[i] == textFromUser.length() - number)
+		{
+			
+		}
+		else
+		{
+
+		}
+		number++;
+	}*/
+
+
 	string textFromUser;
 
 	cout << "Podaj s³owo do sprawdzenia: \n";
 	cin >> textFromUser;
 
+	string reverseTextFromUser;
 
+	for (int i = 0; i < textFromUser.length(); i++)
+	{
+		reverseTextFromUser = textFromUser[i] + reverseTextFromUser;
+	}
 
+	if (reverseTextFromUser == textFromUser)
+	{
+		cout << "to jest palingrom";
+	}
+	else
+	{
+		cout << "to nie jest palingrom";
+	}
+		
 }
 
 
@@ -284,6 +318,7 @@ int main()
 	//task3();
 	//task4();
 	//task5();
+	task6();
 
 }
 
