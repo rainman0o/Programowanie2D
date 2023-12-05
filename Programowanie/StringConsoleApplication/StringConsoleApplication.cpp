@@ -267,26 +267,26 @@ void task5()
 void task6()
 {
 	
-	string textFromUser;
+	std::string textFromUser;
+	std::cout << "Podaj napis\n";
+	std::cin >> textFromUser;
 
-	cout << "Podaj s³owo do sprawdzenia: \n";
-	cin >> textFromUser;
+	
+	bool isPalindrome = true;
 
-	string reverseTextFromUser;
-
-	for (int i = 0; i < textFromUser.length(); i++)
+	for (int left = 0, right = textFromUser.length() - 1; left < right; left++, right--)
 	{
-		reverseTextFromUser = textFromUser[i] + reverseTextFromUser;
+		if (textFromUser[left] != textFromUser[right])
+		{
+			isPalindrome = false;
+			break;
+		}
 	}
 
-	if (reverseTextFromUser == textFromUser)
-	{
-		cout << "to jest palingrom";
-	}
+	if (isPalindrome)
+		std::cout << "To s³owo jest palindromem\n";
 	else
-	{
-		cout << "to nie jest palingrom";
-	}
+		std::cout << "To s³owo nie jest palindromem\n";
 		
 }
 
