@@ -266,26 +266,7 @@ void task5()
 //*Program sprawdzaj¹cy czy podany ci¹g znaków jest palindromem(czyli takim, który czytany od ty³u jest taki sam, jak czytany od przodu, np. "kajak")
 void task6()
 {
-	/*string textFromUser;
-	int number = 1;
-
-	cout << "Podaj s³owo do sprawdzenia: \n";
-	cin >> textFromUser;
-
-	for (int i = 0; i < textFromUser.length(); i++)
-	{
-		if (textFromUser[i] == textFromUser.length() - number)
-		{
-			
-		}
-		else
-		{
-
-		}
-		number++;
-	}*/
-
-
+	
 	string textFromUser;
 
 	cout << "Podaj s³owo do sprawdzenia: \n";
@@ -309,6 +290,59 @@ void task6()
 		
 }
 
+//*Program sprawdzaj¹cy czy podane dwa s³owa s¹ anagramami(czyli takimi, które zawieraj¹ te same litery, ale w innym uk³adzie, np. "klasa" i "salka")
+void task7()
+{
+	string firstTextFromUser;
+	string secondTextFromUser;
+
+	cout << "Podaj pierszy wyraz: \n ";
+	cin >> firstTextFromUser;
+
+	cout << "Podaj drugi wyraz: \n ";
+	cin >> secondTextFromUser;
+
+	if(firstTextFromUser.length() == secondTextFromUser.length())
+	{
+		for (int i = 0; i < firstTextFromUser.length(); i++)
+		{
+			bool isSignIn = false;
+			for (int j = 0; j < secondTextFromUser.length(); j++)
+			{
+				if (firstTextFromUser[i] == secondTextFromUser[j])
+				{
+					secondTextFromUser[j] = ' ';
+					isSignIn = true;
+					break;
+				}
+			}
+			if (isSignIn)
+				continue;
+			else
+				break;
+		}
+
+		bool areAllSpace = true;
+		for (int i = 0; i < secondTextFromUser.length(); i++)
+		{
+			if (secondTextFromUser[i] != ' ');
+		}
+		
+		if (areAllSpace)
+		{
+			cout << "sa to anagramy";
+		}
+		else
+		{
+			cout << "to nie sa anagramy";
+		}
+	}
+	else
+	{
+		cout << "To nie jest anagram\n ";
+	}
+}
+
 
 int main()
 {
@@ -318,7 +352,8 @@ int main()
 	//task3();
 	//task4();
 	//task5();
-	task6();
+	//task6();
+	//task7();
 
 }
 
