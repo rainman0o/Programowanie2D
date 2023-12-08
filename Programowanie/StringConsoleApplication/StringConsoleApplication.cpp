@@ -354,6 +354,7 @@ void task8()
 	int gender;
 	string genderChecking;
 	int controlSum;
+	string whichMonth;
 
 	cout << "podaj numer pesel: ";
 	cin >> peselNumber;
@@ -383,10 +384,65 @@ void task8()
 		cout << "nie ma takiego miesiaca";
 	}
 
+	switch (monthChecking)
+	{
+	case 1:
+		whichMonth = "styczeñ";
+		break;
+
+	case 2:
+		whichMonth = "luty";
+		break;
+
+	case 3:
+		whichMonth = "marzec";
+		break;
+
+	case 4:
+		whichMonth = "kwieceñ";
+		break;
+
+	case 5:
+		whichMonth = "maj";
+		break;
+	
+	case 6:
+		whichMonth = "czerwiec";
+		break;
+
+	case 7:
+		whichMonth = "lipiec";
+		break;
+
+	case 8:
+		whichMonth = "sierpien";
+		break;
+
+	case 9:
+		whichMonth = "wrzesien";
+		break;
+
+	case 10:
+		whichMonth = "pazdziernik";
+		break;
+
+	case 11:
+		whichMonth = "listopad";
+		break;
+
+	case 12:
+		whichMonth = "grudzien";
+		break;
+
+	default:
+		break;
+	}
+
+	//obliczamie roku
 	day = (peselNumber[4] - '0') * 10 + (peselNumber[5] - '0');
 	year = day = (peselNumber[0] - '0') * 10 + (peselNumber[1] - '0');
 
-	//obliczanie roku 
+	
 	if (month >= 1 || month <= 12)
 	{
 		year + 1900;
@@ -480,8 +536,12 @@ void task8()
 		cout << "liczba kontrolna jest niepoprawna";
 	}
 
+	//wyniki
 
-
+	cout << "rok: " << year << "\n";
+	cout << "miesiac: " << monthChecking << "\n";
+	cout << "dzieñ: " << day << "\n";
+	cout << "p³ec: " << genderChecking << "\n";
 }
 
 int main()
