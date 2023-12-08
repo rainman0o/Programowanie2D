@@ -343,6 +343,146 @@ void task7()
 	}
 }
 
+//*Program wyci¹gaj¹cy informacje z numeru PESEL
+void task8()
+{
+	string peselNumber;
+	int month;
+	int monthChecking;
+	int day;
+	int year;
+	int gender;
+	string genderChecking;
+	int controlSum;
+
+	cout << "podaj numer pesel: ";
+	cin >> peselNumber;
+
+	if (peselNumber.length() != 11)
+	{
+		cout << "pesel musi miec 11 znaków \n";
+		return;
+	}
+
+	for (int i = 0; i < 11; i++)
+	{
+		if (peselNumber[i] < 48 || peselNumber[i] > 57)
+		{
+			cout << "pesel musi zawierac tylko cyfry \n";
+			return;
+		}
+	}
+
+	// , 01 - 12, 21 - 32, 41 - 52, 61-72 81 - 92
+
+	month = (peselNumber[2] - '0') * 10 + (peselNumber[3] - '0');
+	monthChecking = month % 20;
+
+	if (monthChecking < 1 || monthChecking > 12)
+	{
+		cout << "nie ma takiego miesiaca";
+	}
+
+	day = (peselNumber[4] - '0') * 10 + (peselNumber[5] - '0');
+	year = day = (peselNumber[0] - '0') * 10 + (peselNumber[1] - '0');
+
+	//obliczanie roku 
+	if (month >= 1 || month <= 12)
+	{
+		year + 1900;
+	}
+	else if (month >= 21 || month <= 32)
+	{
+		year + 2000;
+	}
+	else if (month >= 41 || month <= 52)
+	{
+		year + 2100;
+	}
+	else if (month >= 61 || month <= 72)
+	{
+		year + 2200;
+	}
+	else if (month >= 81 || month <= 92)
+	{
+		year + 1800;
+	}
+
+	//sprawdzenia dnia
+
+	if (monthChecking == 2 )
+	{
+		if (year % 4 == 0 && year % 100 > 0 || year % 400 == 0)
+		{
+			if (day < 30)
+			{
+				cout << "data jest poprawna";
+			}
+			else
+			{
+				cout << "data jest nie poprawna";
+			}
+		}
+	}
+
+	else if (year % 4 != 0 && year % 100 > 1 || year % 400 != 0)
+	{
+		if (day < 29) {
+			cout << "data jest poprawna";
+		}
+		else
+		{
+			cout << "data jest nie poprwana";
+		}
+	}
+
+	else if ((monthChecking == 4 || monthChecking == 6 || monthChecking == 9 || monthChecking == 11) && monthChecking >= 1 && monthChecking <= 30)
+	{
+		cout << "data jest poprawna" << endl;
+	}
+	else if (day >= 1 && day <= 31)
+	{
+		cout << "data jest nie poprawna" << endl;
+	}
+	else
+	{
+		cout << "data jest nie poprawna" << endl;
+	}
+
+	//sprawdzanie p³ci
+	gender = (peselNumber[9] - '0');
+
+	if (gender % 2 == 0)
+	{
+		genderChecking = "kobieta";
+	}
+	else
+	{
+		genderChecking = "mê¿czyzna";
+	}
+
+	//sprawdzenia liczby kontrolnej
+	controlSum =
+		+(peselNumber[0] - '0') * 1
+		+ (peselNumber[1] - '0') * 3
+		+ (peselNumber[2] - '0') * 7
+		+ (peselNumber[3] - '0') * 9
+		+ (peselNumber[4] - '0') * 1
+		+ (peselNumber[5] - '0') * 3
+		+ (peselNumber[6] - '0') * 7
+		+ (peselNumber[7] - '0') * 9
+		+ (peselNumber[8] - '0') * 1
+		+ (peselNumber[9] - '0') * 3
+		+ (peselNumber[10] - '0') * 1;
+	
+	if (controlSum % 10 != 0)
+	{
+		cout << "liczba kontrolna jest niepoprawna";
+	}
+
+
+
+}
 
 int main()
 {
@@ -354,6 +494,7 @@ int main()
 	//task5();
 	//task6();
 	//task7();
+	task8();
 
 }
 
