@@ -41,6 +41,25 @@ void task2()
         cout << numbers[i] << ", ";
     }
     cout << "\n";
+
+    //szukanie maksimum 
+    int max = numbers[0];
+    for (int i = 1; i < SIZE_OF_ARRAY; i++)
+    {
+        if (numbers[i] > max)
+            max = numbers[i];
+    }
+
+    //szukanie minimum
+    int min = numbers[0];
+    for (int i = 1; i < SIZE_OF_ARRAY; i++)
+    {
+        if (numbers[i] < min)
+            min = numbers[i];
+    }
+
+    cout << "Maksymalna wartoœæ to: " << max << "\n";
+    cout << "Minimalna wartoœæ to : " << min << "\n";
 }
 
 int main()
