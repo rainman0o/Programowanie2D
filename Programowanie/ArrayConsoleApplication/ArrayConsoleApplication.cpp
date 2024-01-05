@@ -62,10 +62,81 @@ void task2()
     cout << "Minimalna wartoœæ to : " << min << "\n";
 }
 
+//Napisz program obliczj¹cy œredi¹ arytmetyczn¹ elementów tablicy liczb ca³kowitcy
+void task3()
+{
+    const int UPPER_RANGE = 10;
+    const int LOWER_RANGE = 5;
+
+    const int SIZE_OF_ARRAY = 3;
+    int numbers[SIZE_OF_ARRAY];
+
+    srand(time(NULL));
+
+    for (int i = 0; i < SIZE_OF_ARRAY; i++)
+    {
+        numbers[i] = rand() % (UPPER_RANGE - LOWER_RANGE + 1) + LOWER_RANGE;
+    }
+
+    for (int i = 0; i < SIZE_OF_ARRAY; i++)
+    {
+        cout << numbers[i] << ", ";
+    }
+    cout << "\n";
+
+    int sum = 0;
+
+    for (int i = 0; i < SIZE_OF_ARRAY; i++)
+    {
+        sum += numbers[i];
+    }
+
+    double average = sum * 1.0 / SIZE_OF_ARRAY;
+    cout << "Œrednia arytmetyczna z liczb wynosi: " << average << "\n";
+}
+
+void task4()
+{
+    const int UPPER_RANGE = 10;
+    const int LOWER_RANGE = 5;
+
+    const int SIZE_OF_ARRAY = 3;
+    int numbers[SIZE_OF_ARRAY];
+
+    srand(time(NULL));
+
+    for (int i = 0; i < SIZE_OF_ARRAY; i++)
+    {
+        numbers[i] = rand() % (UPPER_RANGE - LOWER_RANGE + 1) + LOWER_RANGE;
+    }
+
+    for (int i = 0; i < SIZE_OF_ARRAY; i++)
+    {
+        cout << numbers[i] << ", ";
+    }
+    cout << "\n";
+
+    //wersja1
+    for (int numberFromRange = LOWER_RANGE; numberFromRange < UPPER_RANGE; numberFromRange++)
+    {
+        int numbersOfOccurences = 0;
+        for (int j = 0; j < SIZE_OF_ARRAY; j++)
+        {
+            if (numbers[j] == numberFromRange)
+                numbersOfOccurences++;
+        }
+
+        cout << "liczba " << numberFromRange << "wyst¹pi³a " << numbersOfOccurences << "razy\n";
+    }
+}
+
 int main()
 {
+
     //task1();
-    task2();
+    //task2();
+    //task3();
+    task4();
 }
 
 
