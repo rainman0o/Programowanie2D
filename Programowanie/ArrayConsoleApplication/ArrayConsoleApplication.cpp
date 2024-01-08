@@ -97,10 +97,10 @@ void task3()
 
 void task4()
 {
-    const int UPPER_RANGE = 10;
+    const int UPPER_RANGE = 8;
     const int LOWER_RANGE = 5;
 
-    const int SIZE_OF_ARRAY = 3;
+    const int SIZE_OF_ARRAY = 5;
     int numbers[SIZE_OF_ARRAY];
 
     srand(time(NULL));
@@ -128,15 +128,34 @@ void task4()
 
         cout << "liczba " << numberFromRange << "wyst¹pi³a " << numbersOfOccurences << "razy\n";
     }
+
+    //wersja2
+    cout << "wersja2 \n";
+    int numbersOfOccurences[UPPER_RANGE - LOWER_RANGE + 1];
+
+    for (int i = 0; i < UPPER_RANGE - LOWER_RANGE + 1; i++)
+    {
+        numbersOfOccurences[i] = 0;
+    }
+
+    for (int j = 0; j < SIZE_OF_ARRAY; j++)
+    {
+        numbersOfOccurences[numbers[j] - LOWER_RANGE]++;
+    }
+
+    for (int i = 0; i < UPPER_RANGE - LOWER_RANGE + 1; i++)
+    {
+        if (numbersOfOccurences[i] != 0);
+            cout << "liczba " << i + LOWER_RANGE << "wyst¹pi³a " << numbersOfOccurences[i] << "razy\n";
+    }
 }
 
 int main()
 {
-
     //task1();
     //task2();
     //task3();
-    task4();
+    //task4();
 }
 
 
