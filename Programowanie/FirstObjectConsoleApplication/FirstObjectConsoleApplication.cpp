@@ -243,11 +243,11 @@ int main()
 	std::cout << "\n";
 	if (konto1.Transfer(23, konto2))
 	{
-		std::cout << "przelew się udał";
+		std::cout << "przelew się udał" << "\n";
 	}
 	else
 	{
-		std::cout << "przelew się nie udał";
+		std::cout << "przelew się nie udał" << "\n";
 	}
 	konto1.AccountInformation();
 	std::cout << "\n";
