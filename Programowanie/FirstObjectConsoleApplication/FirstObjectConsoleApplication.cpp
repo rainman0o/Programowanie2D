@@ -144,6 +144,11 @@ public:
 
 	}
 
+	Account(Account &p)
+	{
+		accountBalance = p.accountBalance;
+	}
+
 	int Payment(int howMuchMoney)
 	{
 		accountBalance = accountBalance + howMuchMoney;
@@ -182,13 +187,11 @@ public:
 		}	
 		return false;
 	}
-
 };
 
 
 
 int main()
-
 {
 	setlocale(LC_CTYPE, "polish");
 
@@ -209,7 +212,7 @@ int main()
 	//std::cout << "\n";
 	//secondRectrangle.InformationAboutRectrangle();
 
-	Account konto1(20);
+	Account konto1(150);
 	Account konto2(10);
 
 	//informacje o stanie konta
@@ -241,14 +244,12 @@ int main()
 
 	//przelew z jednego konta na drugie
 	std::cout << "\n";
+
 	if (konto1.Transfer(23, konto2))
-	{
 		std::cout << "przelew się udał" << "\n";
-	}
 	else
-	{
 		std::cout << "przelew się nie udał" << "\n";
-	}
+
 	konto1.AccountInformation();
 	std::cout << "\n";
 	konto2.AccountInformation();
