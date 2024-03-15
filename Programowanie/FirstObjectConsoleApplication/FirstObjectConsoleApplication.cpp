@@ -168,14 +168,7 @@ public:
 
 	void AccountInformation()
 	{
-		if (accountBalance > 0)
-		{
-			std::cout << "aktualny stan konta wynosi: " << accountBalance;
-		}
-		else
-		{
-			std::cout << " ";
-		}
+		std::cout << "aktualny stan konta wynosi: " << accountBalance;
 	}
 
 	bool Transfer(int howMuch, Account &target)
