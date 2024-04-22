@@ -84,14 +84,10 @@ public:
 };
 
 
-/*
 
-* Dla poni¿szych klas u³ó¿ drzewko dziedziczenia.
-- , , , , , , , 
-- , , , , , , 
-- , , , , , 
-, , 
-*/
+
+// Dla poni¿szych klas u³ó¿ drzewko dziedziczenia.
+
 
 //zad 1
 
@@ -230,8 +226,8 @@ class Electronic_Device //Electronic Device(Urz¹dzenie elektroniczne)
 {
 
 };
-//urzadenia
 
+//urzadenia
 class Television :public Electronic_Device //Television (Telewizor)
 {
 
