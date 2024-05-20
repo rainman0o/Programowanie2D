@@ -1,4 +1,5 @@
 #include <iostream>
+#include <ctime>
 
 class Licz
 {
@@ -93,9 +94,77 @@ public:
 	}
 };
 
-int main()
+class Osoba
 {
-	//ZADANIE 1
+protected:
+	std::string name;
+	std::string lastName;
+	int age;
+
+public:
+
+	Osoba(std::string nameFromUser, std::string lastNameFromUser, int ageFromUser)
+	{
+		name = nameFromUser;
+		lastName = lastNameFromUser;
+		age = ageFromUser;
+	}
+
+	void Wypisz(){
+		std::cout << "Imie: " << name << "\n"
+			<< "Nazwisko: " << lastName << "\n"
+			<< "Wiek: " << age << "\n";
+	}
+};
+
+class Ksiazka :public Osoba{
+protected:
+	std::string title; 
+	std::string date;
+public:
+
+	Ksiazka(std::string name, std::string lastName, int age, std::string titleFromUser, std::string dateFromUser ) : Osoba(name, lastName, age)
+	{ 
+		title = titleFromUser;
+		date = dateFromUser;
+
+	}
+	
+	void Wypisz() {
+		std::cout << "Imie autora: "<< name <<"\n"<<
+			"Nazwisko autora: "<< lastName << "\n" <<
+			"Wiek autora: " << age <<"\n"<<
+			"Tutul ksi¹¿ki: " << title << "\n" <<
+			"Data wydania: " << date;
+	}
+};
+
+class DateDescription
+{
+private:
+	time_t localTime;
+	int day;
+	int month;
+	int year;
+
+public:
+
+	DateDescription()
+	{
+		localTime = time(NULL);
+		day = localTime / 86400;
+		month = localTime / 2592000;
+		year = localTime / 31536000;
+	}
+
+	void Wypisz() {
+		std::cout << day << "\n" << month << "\n" << year;
+	}
+	
+};
+
+void firstTask()
+{
 	Licz operations1(10);
 	std::cout << "ZADANIE 1" << "\n";
 
@@ -108,8 +177,9 @@ int main()
 	Licz operations2;
 	std::cout << operations2.Dodaj(2) << "\n";
 	std::cout << operations2.Odejmij(1) << "\n";
+}
 
-	//ZADANIE 2
+void secondTask() {
 	std::cout << "ZADANIE 2" << "\n";
 	std::cout << "\n";
 
@@ -130,9 +200,39 @@ int main()
 	std::cout << "\n";
 	SecondArray.LowHighIndex(5, 3);
 	std::cout << "\n";
+}
+
+void thirdTask() {
+	std::cout << "ZADANIE 3" << "\n";
+	Osoba discharge("Marcel", "Kupis", 17);
+	discharge.Wypisz();
+
+	std::cout << "\n";
+	Ksiazka descripton("Jan", "Kowalski", 36, "Ksiazka o czyms", "20.02.2000");
+	descripton.Wypisz();
+	
+}
+
+void fourthTask() {
+	std::cout << "ZADANIE 4" << "\n";
+
+	DateDescription date;
+
+	date.Wypisz();
+}
+
+int main()
+{
+	//ZADANIE 1
+	firstTask();
+
+	//ZADANIE 2
+	secondTask();
 
 	//ZADANIE 3
-
-
+	thirdTask();
+	
+	//ZADANIE 4
+	fourthTask();
 }
 
