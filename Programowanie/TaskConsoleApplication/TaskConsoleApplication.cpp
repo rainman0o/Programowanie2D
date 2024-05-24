@@ -143,22 +143,39 @@ class DateDescription
 {
 private:
 	time_t localTime;
-	int day;
-	int month;
-	int year;
-
+	time_t timeForNextWeek;
+	time_t lastWeekTime;
 public:
 
 	DateDescription()
 	{
 		localTime = time(NULL);
-		day = localTime / 86400;
-		month = localTime / 2592000;
-		year = localTime / 31536000;
+		timeForNextWeek = time(NULL) + 604800;
+		lastWeekTime = time(NULL) - 604800;
 	}
 
-	void Wypisz() {
-		std::cout << day << "\n" << month << "\n" << year;
+	void ShowDate() {
+		char tmBuff[30];
+
+		ctime_s(tmBuff, sizeof(tmBuff), &localTime);
+
+		std::cout << "Dzisiejsza data: " << tmBuff << '\n';
+	}
+
+	void ShowDateForNextWeek() {
+		char tmBuff[30];
+
+		ctime_s(tmBuff, sizeof(tmBuff), &timeForNextWeek);
+
+		std::cout << "Data która bedzie za tydzieñ: " << tmBuff << '\n';
+	}
+
+	void ShowLastWeekDate(){
+		char tmBuff[30];
+
+		ctime_s(tmBuff, sizeof(tmBuff), &lastWeekTime);
+
+		std::cout << "Data która by³a w tamtymn tygodniu: " << tmBuff << '\n';
 	}
 	
 };
@@ -214,15 +231,19 @@ void thirdTask() {
 }
 
 void fourthTask() {
-	std::cout << "ZADANIE 4" << "\n";
+	std::cout<< "\n" << "ZADANIE 4" << "\n";
 
 	DateDescription date;
 
-	date.Wypisz();
+	date.ShowDate();
+	date.ShowDateForNextWeek();
+	date.ShowLastWeekDate();
 }
 
 int main()
 {
+	setlocale(LC_CTYPE, "polish");
+
 	//ZADANIE 1
 	firstTask();
 
