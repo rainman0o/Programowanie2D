@@ -32,13 +32,14 @@ void ParametrTest_v2(ref int p)
 
 void ParametrTest_v3(out int p)
 {
+    p = 9;
     p++;
     Console.WriteLine($"ParametrTest_v3: p = {p} ");
 }
 
 ParametrTest_v1(number);
 Console.WriteLine($"number = {number}");
-
+ 
 ParametrTest_v2(ref number);
 Console.WriteLine($"number = {number}");
 
@@ -46,3 +47,5 @@ int thirdNumber;
 
 ParametrTest_v3(out thirdNumber);
 Console.WriteLine($"number = {thirdNumber}");
+
+Console.WriteLine("Podaj liczbe"); 
