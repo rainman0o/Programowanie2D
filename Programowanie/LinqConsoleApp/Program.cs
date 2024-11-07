@@ -94,5 +94,26 @@ foreach(Person p in sortedPeople)
 }
 
 List<Person> mixedPeople = people.OrderBy(p => new Random().Next()).ToList();
+Console.WriteLine("Kolejcja posortowana losowo");
+foreach(Person p in mixedPeople)
+{
+    Console.WriteLine($"Imie: {p.Name} Nazwisko: {p.Surname} Wiek: {p.Age}");
+}
 
-if (people.Any();
+if(people.Any(p => p.Age < 18))
+{
+    Console.WriteLine("osoby sa niepełoletnie");
+}
+
+if (people.All(p => p.Age >= 18))
+{
+    Console.WriteLine("wszystkie osoby sa pełnoletnie");
+}
+
+Person firstPerson = people.FirstOrDefault(p => p.Name.Length == 3);
+
+if(firstPerson.Equals(default(Person)) == false)
+{
+    Console.WriteLine("osoba z imieniem wiekszym niż 3 litery");
+    Console.WriteLine($"{firstPerson.Name}");
+}
