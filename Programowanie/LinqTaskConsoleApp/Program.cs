@@ -65,7 +65,7 @@ OrderBy
  */
 Console.WriteLine();
 Console.WriteLine("Znalezienie nazw zakończonych zadań posortowanych według długości nazwy: ");
-var endedTasksSortedByNamesLenght = task ;
+var endedTasksSortedByNamesLenght = task. ;
 //Zadanie 7: Zadania pogrupowane według stanu zakończenia, a następnie posortowane w grupach według nazwy
 
 //Zadanie 8: Najkrótsza nazwa zadania niezakończonego
