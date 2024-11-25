@@ -97,9 +97,22 @@ Console.WriteLine(sumOfNamedLenght);
 //Zadanie 10: Lista zadań z indeksami (zakończone zadania z numeracją)
 Console.WriteLine();
 Console.WriteLine("Lista zadań z indeksami (zakończone zadania z numeracją)");
-
+var completedTasksWidthIndex = tasks.Where(t => t.IsCompleted)
+    .Select((t, index) => new { Index = index + 1, Task = t });
+foreach (var r in completedTasksWidthIndex)
+{
+    Console.WriteLine($"{r.Index}:");
+    Console.WriteLine(r.Task);
+}
 //Zadanie 11: Zadania z najdłuższą nazwą w każdej grupie zakończonych i niezakończonych
-var longestNamesInTasks = tasks.
+var groupTasks1 = tasks.GroupBy(t => t.IsCompleted)
+    .Select(g => new { GroupVaule = g.Key, MaxName = g.OrderByDescending(t => t.Name.Length).First().Name });
+foreach (var group in groupTasks)
+{
+    Console.WriteLine($"Grupa zakończona: {group.GroupVaule}");
+    Console.WriteLine($"Najdłuższa nazwa w grupie: {group.MaxName}");
+}
+
 //Zadanie 12: Zlicz, ile zadań w każdej grupie zawiera słowo „the” w nazwie
 
 //Zadanie 13: Utwórz listę zakończonych zadań z ich numeracją oraz długością nazw
@@ -107,5 +120,5 @@ var longestNamesInTasks = tasks.
 //Zadanie 14: Zadania posortowane według stanu zakończenia, a następnie alfabetycznie według nazw
 
 //Zadanie 15: Sprawdź, czy w nazwach wszystkich zadań są co najmniej 2 różne samogłoski
-
+var x = tasks.All(t => t.Name.ToLower().Where(c => "aeiouy".Contains(c)).Distinct().Count() >= 2);
 //Zadanie 16: Znajdź wszystkie unikalne litery używane w nazwach zadań zakończonych
