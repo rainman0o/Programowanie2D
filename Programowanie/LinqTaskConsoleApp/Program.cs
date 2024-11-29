@@ -108,12 +108,12 @@ foreach (var r in completedTasksWidthIndex)
 //Zadanie 11: Zadania z najdłuższą nazwą w każdej grupie zakończonych i niezakończonych
 Console.WriteLine();
 Console.WriteLine("Zadania z najdłuższą nazwą w każdej grupie zakończonych i niezakończonych");
-//var groupTasks1 = tasks.GroupBy(t => t.IsCompleted)
-//    .Select(g => new { GroupVaule = g.Key, MaxName = g.OrderByDescending(t => t.Name.Length).First().Name });
+var groupTasks1 = tasks.GroupBy(t => t.IsCompleted)
+    .Select(g => new { GroupVaule = g.Key, MaxName = g.OrderByDescending(t => t.Name.Length).First().Name });
 //foreach (var group in groupTasks)
 //{
-//    Console.WriteLine($"Grupa zakończona: {group.GroupVaule}");
-//    Console.WriteLine($"Najdłuższa nazwa w grupie: {group.MaxName}");
+//   Console.WriteLine($"Grupa zakończona: {group.GroupVaule}");
+//   Console.WriteLine($"Najdłuższa nazwa w grupie: {group.MaxName}");
 //}
 
 //Zadanie 12: Zlicz, ile zadań w każdej grupie zawiera słowo „the” w nazwie
@@ -129,23 +129,28 @@ foreach(var count in countTheInTasks)
 //Zadanie 13: Utwórz listę zakończonych zadań z ich numeracją oraz długością nazw
 Console.WriteLine();
 Console.WriteLine("Utwórz listę zakończonych zadań z ich numeracją oraz długością nazw");
-var endedTaksWithId = tasks.Where(t => t.IsCompleted == true).Select((t, index) =>
-new {t = tasks.Select(p => p.Name), index = tasks.Select(p => p.Id)});
-foreach(var r in endedTaksWithId)
+var completedTasks = tasks.Where(t => t.IsCompleted).Select((t, index) => new {TaskNumber = index + 1, TaskName = t.Name,NameLength = t.Name.Length});
+foreach (var task in completedTasks)
 {
-    Console.WriteLine($"{r.t}, {r.index}");
+    Console.WriteLine($"Task #{task.TaskNumber}: {task.TaskName}, Length of name: {task.NameLength}");
 }
+
+
 //Zadanie 14: Zadania posortowane według stanu zakończenia, a następnie alfabetycznie według nazw
-//Console.WriteLine();
-//Console.WriteLine("Zadania posortowane według stanu zakończenia, a następnie alfabetycznie według nazw");
-//var sortedTaks = tasks.OrderBy(p => p.IsCompleted).ThenBy(p => p.Name);
-//foreach(var tak in sortedTaks)
-//{
-//    Console.WriteLine(tak);
-//}
+Console.WriteLine();
+Console.WriteLine("Zadania posortowane według stanu zakończenia, a następnie alfabetycznie według nazw");
+var sortedTaks = tasks.OrderBy(p => p.IsCompleted).ThenBy(p => p.Name);
+foreach(var tak in sortedTaks)
+{
+   Console.WriteLine(tak);
+}
+
 //Zadanie 15: Sprawdź, czy w nazwach wszystkich zadań są co najmniej 2 różne samogłoski
 Console.WriteLine();
 Console.WriteLine("Sprawdź, czy w nazwach wszystkich zadań są co najmniej 2 różne samogłoski");
-var x = tasks.All(t => t.Name.ToLower().Where(c => "aeiouy".Contains(c)).Distinct().Count() >= 2);
-Console.WriteLine(x);
+var twoDiffrentTasks = tasks.All(t => t.Name.ToLower().Where(c => "aeiouy".Contains(c)).Distinct().Count() >= 2);
+Console.WriteLine(twoDiffrentTasks);
+
 //Zadanie 16: Znajdź wszystkie unikalne litery używane w nazwach zadań zakończonych
+var uniqueLettersinTasks = tasks.Where(t => t.IsCompleted).SelectMany(t => t.Name.ToLower()).Where(c => char.IsLetter(c)).Distinct();
+Console.WriteLine(string.Join(", ", uniqueLettersinTasks));
