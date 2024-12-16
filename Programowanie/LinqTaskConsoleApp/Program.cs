@@ -86,7 +86,7 @@ foreach (var task in groupTasks)
 Console.WriteLine();
 Console.WriteLine("Najkrótsza nazwa zadania niezakończonego");
 var shortestNotEndedTasks = tasks.Where(p => !p.IsCompleted).OrderBy(p => p.Name.Length).Select(p => p.Name).FirstOrDefault();
-if (shortestNotEndedTasks != null)
+if (shortestNotEndedTasks != null) 
 Console.WriteLine(shortestNotEndedTasks);
 
 //Zadanie 9: Ilość liter w nazwach wszystkich zakończonych zadań
