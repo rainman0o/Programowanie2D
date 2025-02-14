@@ -30,4 +30,3 @@ Console.WriteLine(Math.Abs(int.Parse(strNumberWithMaxDiffrence) - int.Parse(stri
 
 Console.WriteLine("zadanie 4.3");
 
-var revesedPrimeStrNumbers = strNumbers.Where(s => )
