@@ -29,3 +29,5 @@ Console.Write(" ");
 Console.WriteLine(Math.Abs(int.Parse(strNumberWithMaxDiffrence) - int.Parse(string.Join("", strNumberWithMaxDiffrence.Reverse()))));
 
 Console.WriteLine("zadanie 4.3");
+
+var revesedPrimeStrNumbers = strNumbers.Where(s => )
