@@ -12,13 +12,22 @@ streamReader.Close();
 
 List<int> intNumbers = strNumbers.Select(s => int.Parse(s)).ToList();
 
-void oddShortcut()
+
+int oddShortcut(int number)
 {
-    List<int> shortcuts = new List<int>();
+    int singleNumber = 0;
+    int shortcut;
+    do
+    {
+        number % 10 = singleNumber;
+        if(singleNumber % 2 == 0)
+        {
 
+        }
 
-
-
+    } while (number > 0);
    
+
+    return shortcut;
 }
 
