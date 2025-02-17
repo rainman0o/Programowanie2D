@@ -13,21 +13,22 @@ streamReader.Close();
 List<int> intNumbers = strNumbers.Select(s => int.Parse(s)).ToList();
 
 
-int oddShortcut(int number)
+int evenShortcut(int number)
 {
-    int singleNumber = 0;
-    int shortcut;
-    do
+    int result = 0;
+    int multiplier = 1;
+    
+    while (number > 0)
     {
-        number % 10 = singleNumber;
-        if(singleNumber % 2 == 0)
+        int digit = number % 10;
+        if (digit % 2 == 0) 
         {
-
+            result = digit * multiplier + result;
+            multiplier *= 10;
         }
+        number /= 10;
+    }
 
-    } while (number > 0);
-   
-
-    return shortcut;
+    return result;
 }
 
