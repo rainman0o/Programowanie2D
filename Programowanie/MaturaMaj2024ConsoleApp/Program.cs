@@ -29,9 +29,9 @@ int oddShortcut(int number)
 
     return result;
 }
+
 int howManyNotOddShortcut = 0;
 int biggestNotOddShortcut = 0;
-
 foreach (int number in intNumbers)
 {
    if(oddShortcut(number) == 0)
@@ -62,15 +62,15 @@ streamReader.Close();
 
 List<int> intNumbers2 = strNumbers2.Select(s => int.Parse(s)).ToList();
 
-int NWD(int a, int b)
+int NWD(int numberA, int numberB)
 { 
-    while(b != 0)
+    while(numberB != 0)
     {
-        int tmp = b;
-        b = a % b;
-        a = tmp;
+        int tmp = numberB;
+        numberB = numberA % numberB;
+        numberA = tmp;
     }
-    return a;
+    return numberA;
 }
 
 var resoultOfNWD = intNumbers2.Where(n=> oddShortcut(n) > 0 && NWD(n, oddShortcut(n)) == 7).ToList();
