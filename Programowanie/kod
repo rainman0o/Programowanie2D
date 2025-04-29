@@ -1,6 +1,3 @@
-# Programowanie3D
-Console.WriteLine("zadanie 4.3");
-
 bool IsPrime(int number)
 {
     if (number < 2) return false;
