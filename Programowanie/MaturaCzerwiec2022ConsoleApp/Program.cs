@@ -55,3 +55,4 @@ int appearTwiceCount = groupedNumbers.Count(g => g.Count() == 2);
 int appearThreeTimesCount = groupedNumbers.Count(g => g.Count() == 3);
 
 Console.WriteLine($"{differentNumbersCount} {appearTwiceCount} {appearThreeTimesCount}");
+
