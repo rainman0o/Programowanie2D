@@ -19,7 +19,7 @@ Console.WriteLine(Math.Pow((numbers[3]), 2));
 Console.WriteLine(Math.Sqrt(numbers[5]));
 
 Console.WriteLine("Podaj liczbe do dodania");
-numbers.Add( int.Parse(Console.ReadLine()));
+numbers.Add(int.Parse(Console.ReadLine()));
 
 Console.WriteLine(numbers.Last());
 
@@ -37,3 +37,7 @@ for(int i = 0;i <= numbers.Count(); i+= 2)
 
 var maxNum = numbers.Max();
 Console.WriteLine($"Tyle wynosi maxymalna liczba{maxNum}");
+
+var minNum  = numbers.Min();
+Console.WriteLine(minNum);
+
