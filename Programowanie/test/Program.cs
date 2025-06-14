@@ -41,3 +41,4 @@ Console.WriteLine($"Tyle wynosi maxymalna liczba{maxNum}");
 var minNum  = numbers.Min();
 Console.WriteLine(minNum);
 
+
